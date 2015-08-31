@@ -12,7 +12,6 @@ RPROMPT="%{$fg[cyan]%}[%~]%{$reset_color%}"
 
 
 autoload -U compinit; compinit
-setopt auto_cd
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 
@@ -44,6 +43,8 @@ esac
     setopt no_beep
     setopt ignore_eof
 
+    setopt auto_cd
+    function chpwd(){ ls }
 
     alias la='ls -a'
     alias ll='ls -l'
